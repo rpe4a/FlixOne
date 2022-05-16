@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlixOne.InventoryManagement", "FlixOne.InventoryManagement\FlixOne.InventoryManagement.csproj", "{07433B9F-41A0-4865-93C0-0CB6A849B169}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlixOne.InventoryManagementClient", "FlixOne.InventoryManagementClient\FlixOne.InventoryManagementClient.csproj", "{0CD27B43-34B2-486C-BDB6-9A8F5EADB507}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C4967B4C-1CA4-48F6-AB0C-8FE220A4F34B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixOne.InventoryManagementTests", "FlixOne.InventoryManagementTests\FlixOne.InventoryManagementTests.csproj", "{7DF1E419-2FB7-42D4-B679-FE4790DE50B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07433B9F-41A0-4865-93C0-0CB6A849B169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07433B9F-41A0-4865-93C0-0CB6A849B169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07433B9F-41A0-4865-93C0-0CB6A849B169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07433B9F-41A0-4865-93C0-0CB6A849B169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CD27B43-34B2-486C-BDB6-9A8F5EADB507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CD27B43-34B2-486C-BDB6-9A8F5EADB507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CD27B43-34B2-486C-BDB6-9A8F5EADB507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CD27B43-34B2-486C-BDB6-9A8F5EADB507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DF1E419-2FB7-42D4-B679-FE4790DE50B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DF1E419-2FB7-42D4-B679-FE4790DE50B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DF1E419-2FB7-42D4-B679-FE4790DE50B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DF1E419-2FB7-42D4-B679-FE4790DE50B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7DF1E419-2FB7-42D4-B679-FE4790DE50B5} = {C4967B4C-1CA4-48F6-AB0C-8FE220A4F34B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BBBEA179-80BC-4421-A2D1-097EF7C401B6}
+	EndGlobalSection
+EndGlobal
