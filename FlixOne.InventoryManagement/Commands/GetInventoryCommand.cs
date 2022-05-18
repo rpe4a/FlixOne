@@ -1,8 +1,8 @@
 ﻿namespace FlixOne.InventoryManagement.Commands;
 
-internal class GetInventoryCommand : NonTerminatingCommand
+public class GetInventoryCommand : NonTerminatingCommand
 {
-    private readonly IInventoryContext _context;
+    private readonly IInventoryReadContext _context;
 
     protected override bool InternalCommand()
     {
@@ -14,7 +14,9 @@ internal class GetInventoryCommand : NonTerminatingCommand
         return true;
     }
 
-    public GetInventoryCommand(IInventoryContext context, IUserInterface userInterface) : base(userInterface)
+    protected override string[] CommandStrings { get; } = new[] { "g", "getinventory" };
+
+    public GetInventoryCommand(IInventoryReadContext context, IUserInterface userInterface) : base(userInterface)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }

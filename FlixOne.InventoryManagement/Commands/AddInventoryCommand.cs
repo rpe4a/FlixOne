@@ -1,10 +1,10 @@
 ﻿namespace FlixOne.InventoryManagement.Commands;
 
-internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand
+public class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand
 {
-    private readonly IInventoryContext _context;
+    private readonly IInventoryWriteContext _context;
 
-    public AddInventoryCommand(IInventoryContext context, IUserInterface userInterface) : base(userInterface)
+    public AddInventoryCommand(IInventoryWriteContext context, IUserInterface userInterface) : base(userInterface)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }
@@ -28,4 +28,6 @@ internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedComman
     {
         return _context.AddBook(InventoryName);
     }
+
+    protected override string[] CommandStrings { get; } = new[] { "a", "addinventory" };
 }

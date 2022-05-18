@@ -1,6 +1,6 @@
 ﻿namespace FlixOne.InventoryManagement.Commands;
 
-internal class HelpCommand : NonTerminatingCommand
+public class HelpCommand : NonTerminatingCommand
 {
     protected override bool InternalCommand()
     {
@@ -12,7 +12,9 @@ internal class HelpCommand : NonTerminatingCommand
         return true;
     }
 
+    protected override string[] CommandStrings { get; } = { "?" };
+
     public HelpCommand(IUserInterface userInterface) : base(userInterface)
-    {   
+    {
     }
 }

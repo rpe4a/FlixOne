@@ -2,14 +2,11 @@
 
 namespace FlixOne.InventoryManagement;
 
-internal class InventoryContext : IInventoryContext
+public class InventoryContext : IInventoryContext
 {
-    private static readonly Lazy<InventoryContext> Lazy = new(() => new InventoryContext());
-
     private readonly object _locker = new object();
-    public static InventoryContext Singleton => Lazy.Value;
 
-    protected InventoryContext()
+    public InventoryContext()
     {
         _books = new ConcurrentDictionary<string, Book>();
     }
@@ -30,7 +27,7 @@ internal class InventoryContext : IInventoryContext
     public bool UpdateQuantity(string name, int quantity)
     {
         var book = _books[name];
-        
+
         lock (_locker)
         {
             book.Quantity += quantity;

@@ -32,4 +32,11 @@ public abstract class InventoryCommand
     {
         return Interface.ReadValue($"Enter {parameterName}:");
     }
+
+    protected abstract string[] CommandStrings { get; }
+
+    public virtual bool IsCommandFor(string input)
+    {
+        return CommandStrings.Contains(input.ToLower());
+    }
 }

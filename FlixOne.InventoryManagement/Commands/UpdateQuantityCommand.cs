@@ -1,8 +1,8 @@
 ﻿namespace FlixOne.InventoryManagement.Commands;
 
-internal class UpdateQuantityCommand : NonTerminatingCommand, IParameterisedCommand
+public class UpdateQuantityCommand : NonTerminatingCommand, IParameterisedCommand
 {
-    private readonly IInventoryContext _context;
+    private readonly IInventoryWriteContext _context;
 
     internal string InventoryName { get; private set; }
 
@@ -18,7 +18,9 @@ internal class UpdateQuantityCommand : NonTerminatingCommand, IParameterisedComm
         return _context.UpdateQuantity(InventoryName, Quantity);
     }
 
-    public UpdateQuantityCommand(IInventoryContext context, IUserInterface userInterface) : base(userInterface)
+    protected override string[] CommandStrings { get; } = new[] { "u", "updatequantity" };
+
+    public UpdateQuantityCommand(IInventoryWriteContext context, IUserInterface userInterface) : base(userInterface)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }

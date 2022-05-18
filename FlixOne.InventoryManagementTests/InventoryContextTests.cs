@@ -2,16 +2,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FlixOne.InventoryManagement;
+using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace FlixOne.InventoryManagementTests
 {
     public class InventoryContextTests
     {
+        private readonly ServiceProvider _provider;
+
+        public InventoryContextTests()
+        {
+            IServiceCollection services = new ServiceCollection();
+            services.AddSingleton<IInventoryContext, InventoryContext>();
+
+            _provider = services.BuildServiceProvider();
+        }
+
         [Fact]
         public void MaintainBooks_Successful()
         {
-            var context = InventoryContext.Singleton;
+            var context = _provider.GetRequiredService<IInventoryContext>();
             var tasks = new List<Task>();
 
             // добавление 30 книг
@@ -53,16 +64,16 @@ namespace FlixOne.InventoryManagementTests
         {
             return Task.Run(() =>
             {
-                var context = InventoryContext.Singleton;
+                var context = _provider.GetRequiredService<IInventoryContext>();
                 Assert.True(context.AddBook(book));
             });
         }
-        
+
         public Task UpdateQuantity(string book, int quantity)
         {
             return Task.Run(() =>
             {
-                var context = InventoryContext.Singleton;
+                var context = _provider.GetRequiredService<IInventoryContext>();
                 Assert.True(context.UpdateQuantity(book, quantity));
             });
         }
